@@ -5,6 +5,7 @@ function Timer() {
   const [isCountingDown, setIsCountingDown] = useState(false); // State for counting down but using it to change the button between Start/Pause
   const time = useRef(1 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
   const intervalId = useRef(null); //null is blank/initial value
+  let alarmTone = new Audio("./sounds/lofialarm.mp3");
 
   function onStartPauseClick() {
     setIsCountingDown((prevState) => !prevState); // Switches to previous state
@@ -28,6 +29,7 @@ function Timer() {
         //If time hits 0, the timer stops
         if (time.current <= 0) {
           clearInterval(intervalId.current);
+          alarmTone.play();
           return;
         }
 
