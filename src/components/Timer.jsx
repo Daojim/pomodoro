@@ -6,8 +6,10 @@ function Timer() {
   const time = useRef(1 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
   const intervalId = useRef(null); //null is blank/initial value
   let alarmTone = new Audio("./sounds/lofialarm.mp3");
+  let buttonSound = new Audio("./sounds/clack.wav");
 
   function onStartPauseClick() {
+    buttonSound.play();
     setIsCountingDown((prevState) => !prevState); // Switches to previous state
   }
 
