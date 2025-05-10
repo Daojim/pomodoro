@@ -13,9 +13,11 @@ function Timer() {
     console.log("useEffect runs");
 
     const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
-    });
-  });
+      setCount((prevCount) => prevCount + 1); // Correct way to update state
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="timerCard">
