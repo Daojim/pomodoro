@@ -5,7 +5,7 @@ function Timer() {
   const [isCountingDown, setIsCountingDown] = useState(false); // State for counting down but using it to change the button between Start/Pause
   const time = useRef(1 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
   const intervalId = useRef(null); //null is blank/initial value
-  let alarmTone = new Audio("./sounds/alarm.mp3");
+  let alarmTone = new Audio("./sounds/alarm.wav");
   let buttonSound = new Audio("./sounds/clack.wav");
 
   function onStartPauseClick() {
