@@ -13,18 +13,6 @@ function Timer() {
     setIsCountingDown((prevState) => !prevState); // Switches to previous state
   }
 
-  // previous
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     time--;
-  //     const minutes = Math.floor(time / 60); // Get the number of minutes by dividing total seconds calculated earlier
-  //     let seconds = time % 60;
-  //     setTimeText(`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`); //If seconds is less than 10, add a leading zero
-  //   }, 1000);
-
-  //   return () => clearInterval(interval);
-  // }, [isCountingDown]);
-
   useEffect(() => {
     if (isCountingDown) {
       intervalId.current = setInterval(() => {
