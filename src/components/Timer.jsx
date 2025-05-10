@@ -4,7 +4,7 @@ function Timer() {
   const [timeText, setTimeText] = useState("25:00"); // State for timer text
   const [isCountingDown, setIsCountingDown] = useState(false); // State for counting down but using it to change the button between Start/Pause
   const [count, setCount] = useState(1000);
-  let startingMinutes = 25; // Setting default timer of pomodoro to be 25 minutes
+  const startingMinutes = 25; // Setting default timer of pomodoro to be 25 minutes
   let time = startingMinutes * 60; // 25 minutes * 60 to get total amount of seconds
 
   function onStartPauseClick() {
