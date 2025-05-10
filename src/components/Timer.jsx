@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 function Timer() {
   const [timeText, setTimeText] = useState("25:00");
   const [isCountingDown, setIsCountingDown] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1000);
 
   function onStartPauseClick() {
     setIsCountingDown((prevState) => !prevState);
@@ -13,7 +13,7 @@ function Timer() {
     console.log("useEffect runs");
 
     const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1); // Correct way to update state
+      setCount((prevCount) => prevCount - 1); // Correct way to update state
     }, 1000);
 
     return () => clearInterval(interval);
