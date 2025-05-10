@@ -3,13 +3,23 @@ import { useState, useRef, useEffect } from "react";
 function Timer() {
   const [timeText, setTimeText] = useState("25:00");
   const [isCountingDown, setIsCountingDown] = useState(false);
+  const [count, setCount] = useState(0);
 
   function onStartPauseClick() {
     setIsCountingDown((prevState) => !prevState);
   }
 
+  useEffect(() => {
+    console.log("useEffect runs");
+
+    const interval = setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
+    });
+  });
+
   return (
     <div className="timerCard">
+      <h1>{count}</h1>
       <div className="timerSection">
         <h1 className="countdown">{timeText}</h1>
         <div className="startPause">
