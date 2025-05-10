@@ -20,7 +20,7 @@ function Timer() {
       const minutes = Math.floor(time / 60); // Get the number of minutes by dividing total seconds calculated earlier
       let seconds = time % 60;
       setCount((prevCount) => prevCount - 1);
-      setTimeText(`${minutes}:${seconds}`);
+      setTimeText(`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`); //If seconds is less than 10, add a leading zero
     }, 1000);
 
     return () => clearInterval(interval);
