@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Timer() {
   const [timeText, setTimeText] = useState("25:00"); // State for timer text
@@ -11,9 +11,6 @@ function Timer() {
   }
 
   useEffect(() => {
-    //geeksforgeeks code idea
-    console.log("useEffect runs");
-
     const interval = setInterval(() => {
       time--;
       const minutes = Math.floor(time / 60); // Get the number of minutes by dividing total seconds calculated earlier
@@ -22,7 +19,7 @@ function Timer() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isCountingDown]);
 
   return (
     <div className="timerCard">
