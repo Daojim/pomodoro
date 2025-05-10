@@ -4,6 +4,8 @@ function Timer() {
   const [timeText, setTimeText] = useState("25:00");
   const [isCountingDown, setIsCountingDown] = useState(false);
   const [count, setCount] = useState(1000);
+  let startingMinutes = 25;
+  let time = startingMinutes * 60;
 
   function onStartPauseClick() {
     setIsCountingDown((prevState) => !prevState);
@@ -13,7 +15,11 @@ function Timer() {
     console.log("useEffect runs");
 
     const interval = setInterval(() => {
-      setCount((prevCount) => prevCount - 1); // Correct way to update state
+      time--;
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      setCount((prevCount) => prevCount - 1);
+      setTimeText(`${minutes}:${seconds}`);
     }, 1000);
 
     return () => clearInterval(interval);
