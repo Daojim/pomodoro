@@ -1,10 +1,6 @@
 import { useState } from "react";
 
 function Timer() {
-  function onStartPauseClick() {
-    alert("clicked");
-  }
-
   const startingMinutes = 25;
   let time = startingMinutes * 60;
   const [timeText, setTimeText] = useState("25:00");
