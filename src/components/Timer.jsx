@@ -1,17 +1,35 @@
+import { useState } from "react";
+
 function Timer() {
   function onStartPauseClick() {
     alert("clicked");
   }
 
-  const startingMinutes = 25;
-  let time = startingMinutes * 60;
+  //   const countdown = document.querySelector(".countdown");
+
+  //   const startingMinutes = 25;
+  //   let time = startingMinutes * 60;
+
+  //   setInterval(updateCountdown, 1000);
+
+  //   function updateCountdown() {
+  //     const minutes = Math.floor(time / 60);
+  //     let seconds = time % 60;
+
+  //     time--;
+  //   }
+
+  const [timeText, setTimeText] = useState("hello");
 
   return (
-    <div className="countdownCard">
-      <div className="countdownTimer">
-        Timer
+    <div className="timerCard">
+      <div className="timerSection">
+        <h1 className="countdown">{timeText}</h1>
         <div className="startPause">
-          <button className="startPause-btn" onClick={onStartPauseClick}>
+          <button
+            className="startPause-btn"
+            onClick={() => setTimeText("TEST STATE CHANGE")}
+          >
             Start
           </button>
         </div>
