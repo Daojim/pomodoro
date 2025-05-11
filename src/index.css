@@ -18,6 +18,53 @@
   width: 500px;
 } */
 
+/* Timer.css */
+
+.timerCard {
+  background-color: #b12626;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 4rem auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  color: #ffeaea;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.timerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.countdown {
+  font-size: 6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.startPause-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9e2a2a; /* red text */
+  background-color: #fff; /* white background */
+  border: 1px solid #571e1e;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.startPause-btn:hover {
+  background-color: #f5e5e5; /* subtle pinkish tint on hover */
+  color: #7e1f1f; /* deeper red on hover */
+  transform: scale(1.05);
+}
+
 a {
   font-weight: 500;
   color: #646cff;
