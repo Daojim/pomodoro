@@ -18,6 +18,8 @@ function Timer() {
   }
 
   function changeMode(mode) {
+    clearInterval(intervalId.current);
+    setIsCountingDown(false);
     setTimeText(`${mode}:00`);
     time.current = mode * 60;
   }
