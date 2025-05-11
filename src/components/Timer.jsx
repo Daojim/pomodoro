@@ -3,14 +3,23 @@ import { useState, useEffect, useRef } from "react";
 function Timer() {
   const [timeText, setTimeText] = useState("1:00"); // State for timer text
   const [isCountingDown, setIsCountingDown] = useState(false); // State for counting down but using it to change the button between Start/Pause
-  const time = useRef(1 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
+  const time = useRef(25 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
   const intervalId = useRef(null); //null is blank/initial value
   let alarmTone = new Audio("./sounds/alarm.wav");
   let buttonSound = new Audio("./sounds/clack.wav");
 
+  const pomodoroTime = 25;
+  const shortBreak = 5;
+  const longBreak = 15;
+
   function onStartPauseClick() {
     buttonSound.play();
     setIsCountingDown((prevState) => !prevState); // Switches to previous state
+  }
+
+  function changeMode(mode) {
+    setTimeText(`${mode}:00`);
+    time.current = mode * 60;
   }
 
   useEffect(() => {
@@ -37,6 +46,15 @@ function Timer() {
 
   return (
     <div className="timerCard">
+      <button className="pomodoro-btn" onClick={() => changeMode(pomodoroTime)}>
+        Pomodoro
+      </button>
+      <button className="shortBreak-btn" onClick={() => changeMode(shortBreak)}>
+        Short Break
+      </button>
+      <button className="longBreak-btn" onClick={() => changeMode(longBreak)}>
+        Long Break
+      </button>
       <div className="timerSection">
         <h1 className="countdown">{timeText}</h1>
         <div className="startPause">
