@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 function Timer() {
-  const [timeText, setTimeText] = useState("1:00"); // State for timer text
+  const [timeText, setTimeText] = useState("25:00"); // State for timer text
   const [isCountingDown, setIsCountingDown] = useState(false); // State for counting down but using it to change the button between Start/Pause
+  const [duration, setDuration] = useState(25 * 60); // default to Pomodoro
   const time = useRef(25 * 60); //useRef doesn't reset on re-render or cause re-renders when updated
   const intervalId = useRef(null); //null is blank/initial value
   let alarmTone = new Audio("./sounds/alarm.wav");
@@ -22,6 +23,7 @@ function Timer() {
     setIsCountingDown(false);
     setTimeText(`${mode}:00`);
     time.current = mode * 60;
+    setDuration(mode * 60);
   }
 
   useEffect(() => {
@@ -48,6 +50,13 @@ function Timer() {
 
   return (
     <div className="timerCard">
+      <div className="progressBarContainer">
+        <div
+          className="progressBar"
+          style={{ width: `${(time.current / duration) * 100}%` }}
+        ></div>
+      </div>
+
       <button className="pomodoro-btn" onClick={() => changeMode(pomodoroTime)}>
         Pomodoro
       </button>
