@@ -1,5 +1,6 @@
 import "./App.css";
 import Timer from "./components/Timer";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function App() {
   return (
@@ -12,14 +13,14 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub
+          <FaGithub size={24} />
         </a>
         <a
           href="https://www.linkedin.com/in/jimmy-d-9a0156130/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          <FaLinkedin size={24} />
         </a>
       </div>
     </>
