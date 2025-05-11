@@ -13,6 +13,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.socialLinks {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.socialLinks a {
+  color: #ffeaea;
+  text-decoration: none;
+  background-color: #9e2a2a;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.socialLinks a:hover {
+  background-color: #c73737;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
