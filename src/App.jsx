@@ -4,6 +4,7 @@ import Timer from "./components/Timer";
 function App() {
   return (
     <>
+      <h1>Jimmy's Simple Pomodoro App</h1>
       <Timer />
     </>
   );
