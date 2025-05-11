@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import "../../css/Timer.css";
 
 function Timer() {
   const [timeText, setTimeText] = useState("25:00"); // State for timer text
