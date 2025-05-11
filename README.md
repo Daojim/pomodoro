@@ -10,3 +10,4 @@ To-do list:
   - Adjust volume
   - Insert custom time
   - Change themes
+- Count total amount of pomodoros
